@@ -13,6 +13,8 @@ function Products() {
 
     return(
         <div>
+            <h1>Products</h1>
+           <div >
            {products.map((el)=>{
             return(
                 <div className="product" key={el.id}>
@@ -22,6 +24,7 @@ function Products() {
                 </div>
             )
            })}
+           </div>
         </div>
     )
 }
