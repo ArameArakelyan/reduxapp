@@ -10,7 +10,7 @@ function Header() {
             <nav>
                 <ul>
                     <Link to={`/`}>Search</Link>
-                    <Link to={`/likes`}>Likes</Link>
+                    <Link to={`/likes`}>Favorites</Link>
                 </ul>
             </nav>
         </header>

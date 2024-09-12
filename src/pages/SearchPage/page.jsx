@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import useFetch from "../../Costume hooks/useFetch";
+import PhotoBox from "../../components/photobox/photoBox";
 
 function Search() {
     const [value, setValue] = useState("")
-    const photos = useSelector((state) => state.photos)
-    const dispatch = useDispatch()
-   console.log(photos);
-   
+    const [text, setText] = useState("")
 
     function onSubmit(e) {
         e.preventDefault()
-        e.stopPropagation();   
+        e.stopPropagation();  
+        setText(value) 
         setValue("")
-        dispatch({
-            type: "SEARCH",
-            payload: value
-        })
     }
-
+    let photos = useFetch(text)
     return (
         <div className="root">
             <form onSubmit={onSubmit}>
@@ -26,7 +22,11 @@ function Search() {
             </form>
 
             <div className="cont">
-               
+               {photos.map((el,i)=>{
+                return(
+                    <PhotoBox key={i} photo={el}/>
+                )
+               })}
             </div>
         </div>
     )

@@ -1,8 +1,9 @@
 import { combineReducers, createStore } from "redux";
-import photos from "./PhotoSlice";
+import likes from "./FavSlice";
+
 
 const root = combineReducers({
-    photos:photos
+  likes:likes
 })
 const store = createStore(root)
 

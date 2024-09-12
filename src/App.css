@@ -10,3 +10,19 @@ header{
   width: 100%;
   padding: 10px 100px;
 }
+.root{
+  margin-top: 50px;
+  text-align: center;
+}
+.cont{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 50px;
+  gap: 10px;
+  text-align: center;
+}
+
+img{
+  width: 300px;
+  height: 150px;
+}
